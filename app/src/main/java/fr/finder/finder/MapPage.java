@@ -12,7 +12,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -44,6 +47,8 @@ public class MapPage extends Fragment implements OnMapReadyCallback {
         View v = inflater.inflate(R.layout.fragment_map_page, container, false);
         FloatingActionButton helpSearchMapButton = (FloatingActionButton) v.findViewById(R.id.helpSearchMapButton);
         final RelativeLayout helpSearchMapBox = (RelativeLayout) v.findViewById(R.id.helpSearchMapBox);
+        Button buttonSearchMap = (Button)v.findViewById(R.id.searchMapButton);
+
         helpSearchMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +58,13 @@ public class MapPage extends Fragment implements OnMapReadyCallback {
                 else {
                     helpSearchMapBox.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        buttonSearchMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // send to server the request to have the location of the different companies
             }
         });
 
@@ -79,14 +91,15 @@ public class MapPage extends Fragment implements OnMapReadyCallback {
         map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                //Intent intent = new Intent(getActivity(), PageCompany.class);
+                //Intent intent = new Intent(getActivity(), PageCompany.class); // A changer ici Ismail !!
                 //startActivity(intent);
             }
         });
     }
 
+
     public void customAddMarker(LatLng latLng, String title, String snippet) {
-        //use when we will custom the marker
+        //use when we will custom the marker - optional
     }
 
     public LatLng getLocationFromAddress(Context context,String strAddress) {
