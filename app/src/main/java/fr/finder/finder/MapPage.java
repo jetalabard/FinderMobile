@@ -82,7 +82,7 @@ public class MapPage extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
-        LatLng pos = getLocationFromAddress(getActivity(), "Paris, France");
+        LatLng pos = getLocationFromAddress(getActivity(), "Paris");
 
         MarkerOptions option = new MarkerOptions();
         option.position(pos).title("Paris");

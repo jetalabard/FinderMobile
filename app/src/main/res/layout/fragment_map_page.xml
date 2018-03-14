@@ -27,6 +27,7 @@
         android:layout_marginEnd="28dp"
         android:clickable="true"
         android:src="?android:attr/actionModeWebSearchDrawable"
+        app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -37,7 +38,7 @@
         android:layout_marginBottom="96dp"
         android:layout_marginEnd="76dp"
         android:background="@drawable/popupsearchboxmap"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -47,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="Search" />
+            android:text="Search"
+            android:textColorLink="@android:color/holo_red_dark" />
 
         <EditText
             android:id="@+id/nameCompany"
@@ -55,7 +57,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Recherche"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColorLink="@android:color/holo_red_dark" />
 
         <Spinner
             android:id="@+id/country"
