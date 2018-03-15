@@ -56,7 +56,14 @@
             android:name=".HomePageActivity"
             android:exported="true"
             android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AgencyDetails" />
+        <activity android:name=".AgencyMapList" />
+        <activity android:name=".AgencyPolesList" />
+        <activity android:name=".CollaboratorDetails" />
+        <activity android:name=".FavouriteAgencies" />
+        <activity android:name=".PoleDetails" />
+        <activity android:name=".ProjectDetails"></activity>
     </application>
 
 </manifest>
