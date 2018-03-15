@@ -28,6 +28,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
+import fr.finder.business.Adress;
+import fr.finder.business.Agency;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -91,8 +94,8 @@ public class MapPage extends Fragment implements OnMapReadyCallback {
         map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                //Intent intent = new Intent(getActivity(), PageCompany.class); // A changer ici Ismail !!
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(), Agency.class); // send get agency to server
+                startActivity(intent);
             }
         });
     }
@@ -122,5 +125,7 @@ public class MapPage extends Fragment implements OnMapReadyCallback {
 
         return position;
     }
-
+    public void addMarker(List<Adress> adresses) {
+        //
+    }
 }
