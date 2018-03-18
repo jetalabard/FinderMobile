@@ -53,4 +53,8 @@ public class Agency {
         return Adress;
     }
 
+    @Override
+    public String toString() {
+        return Name;
+    }
 }

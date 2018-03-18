@@ -35,6 +35,12 @@ interface IFacadeAgency {
     List<Agency> getAgencies(String country);
 
     /**
+     * récupère l'agence qui porte ce nom
+     * @return
+     */
+    Agency getAgencyByName(String name);
+
+    /**
      * récupère la liste des agences d'un pays et d'une ville
      * @return
      */

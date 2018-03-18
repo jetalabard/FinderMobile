@@ -1,4 +1,4 @@
-#Sun Mar 18 09:36:12 CET 2018
-base.0=D\:\\Export Finder\\UnityFinderFinal\\Finder\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+#Sun Mar 18 20:44:02 CET 2018
+base.0=C\:\\Users\\jerem\\OneDrive\\Documents\\GitHub\\FinderMobile\\build\\intermediates\\transforms\\dexMerger\\debug\\11
 path.0=classes.dex
 renamed.0=classes.dex

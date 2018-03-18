@@ -26,16 +26,16 @@ public class AccessDataTest implements IAccessData {
      * liste d'adresse
      */
     public static List<Adress> Adresses = new ArrayList<Adress>(){{
-        add(new Adress("5","rue Saint-George","Clermont-Ferrand","63000","France","45.783469","3.081629"));
-        add(new Adress("18","rue Saint Honoré","Paris","75000","France","48.860783","2.345759"));
+        add(new Adress("5","rue Saint-George","Clermont-Ferrand","France","63000","45.783469","3.081629"));
+        add(new Adress("18","rue Saint Honoré","Paris","France","75000","48.860783","2.345759"));
     }};
 
     /**
      * liste d'agences
      */
     public static List<Agency> Agencies = new ArrayList<Agency>(){{
-        add(new Agency("124","AgenceTest","description","",Adresses.get(0)));
-        add(new Agency("125","AgenceTest2","description","",Adresses.get(1)));
+        add(new Agency("124","AgenceTest","zjbvmozjvbùzrvbzqrvbùzqvjbzùqvjbqùfvbjqùvbjqùvsbjqùvjbqùvbjqùvbqùovfbqùfvbqùsvobqùsovbùqsvbqùsvdbqùdsvbqùdv","",Adresses.get(0)));
+        add(new Agency("125","AgenceTest2","zjbvmozjvbùzrvbzqrvbùzqvjbzùqvjbqùfvbjqùvbjqùvsbjqùvjbqùvbjqùvbqùovfbqùfvbqùsvobqùsovbùqsvbqùsvdbqùdsvbqùdv","",Adresses.get(1)));
     }};
     /**
      * liste de pole

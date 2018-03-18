@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Finder.iml" filepath="$PROJECT_DIR$/Finder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FinderMobile.iml" filepath="$PROJECT_DIR$/FinderMobile.iml" />
     </modules>
   </component>
 </project>

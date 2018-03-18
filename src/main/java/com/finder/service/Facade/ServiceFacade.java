@@ -15,7 +15,7 @@ import com.finder.controller.TestConnection;
 import com.finder.service.Cache.IServiceCache;
 import com.finder.service.Cache.ServiceCache;
 import com.finder.service.Cache.SharedPreferencesTags;
-import com.finder.service.ImplementationService.ChoiceDataTestOrRealData;
+import com.finder.service.WebService.ChoiceDataTestOrRealData;
 import com.finder.service.WebService.AccessDataWebService;
 import com.finder.service.WebService.IAccessData;
 import com.test.AccessDataTest;
@@ -178,6 +178,19 @@ public class ServiceFacade implements IFacadeService {
             }
         }
         return list;
+    }
+
+    @Override
+    public Agency getAgencyByName(String name)
+    {
+        Agency agency = null;
+        List<Agency> agencies = this.getAgencies();
+        for (Agency a : agencies) {
+            if (a.getName().equals(name)) {
+                agency = a;
+            }
+        }
+        return agency;
     }
 
     @Override
