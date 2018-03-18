@@ -6,17 +6,16 @@ package fr.finder.business;
 
 public class User {
 
-    private String Id;
-
+    private String username;
     private String Password;
 
     public User(String id, String password) {
-        Id = id;
+        username = id;
         Password = password;
     }
 
     public String getId() {
-        return Id;
+        return username;
     }
 
     public String getPassword() {
