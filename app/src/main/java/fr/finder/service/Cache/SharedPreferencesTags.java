@@ -1,5 +1,9 @@
 package fr.finder.service.Cache;
 
+import java.util.ArrayList;
+
+import fr.finder.business.AgencyBDD;
+
 /**
  * Created by jerem on 05/03/2018.
  */
@@ -7,6 +11,8 @@ package fr.finder.service.Cache;
 public class SharedPreferencesTags
 {
     public static String PREF_AGENCY = "Pref_Agency";
+
+    public static ArrayList<AgencyBDD> AGENCIES;
 
     public static String PREF_FAVORITE_AGENCY = "Pref_Favorite_Agency";
 

@@ -4,6 +4,7 @@ package fr.finder.finder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,8 +13,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.IOException;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.finder.business.Agency;
+import fr.finder.business.AgencyBDD;
+import fr.finder.model.ModelAgency;
 import fr.finder.model.ModelUser;
 
 
@@ -25,6 +35,7 @@ public class LoginActivity extends AppCompatActivity  {
     EditText editPassword;
     Button btnLogin;
     private Context context;
+    ArrayList<AgencyBDD> getsAgency;
 
 
     @Override
@@ -70,8 +81,32 @@ public class LoginActivity extends AppCompatActivity  {
                         else {
 
                             // add session
-                            Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
-                            startActivity(intent);
+                            new AsyncTask<Void, Void, Void>(){
+
+                                ModelAgency modelAgency = new ModelAgency();
+                                AgencyBDD agencyBDD;
+
+                                @Override
+                                protected Void doInBackground(Void[] params) {
+
+                                    getsAgency = modelAgency.gets();
+                                    for(int i=0; i<getsAgency.size(); i++) {
+                                        agencyBDD = getsAgency.get(i);
+                                        System.out.println(agencyBDD.get_id());
+                                    }
+                                    return null;
+                                }
+
+                                @Override
+                                protected void onPostExecute(Void aVoid) {
+                                    Bundle data = new Bundle();
+                                    data.putParcelableArrayList("search.resultSet", getsAgency);
+                                    Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                                    intent.putExtra("agencies", getsAgency);
+                                    startActivity(intent);
+                                }
+                            }.execute();
+
 
                         }
 
@@ -85,3 +120,23 @@ public class LoginActivity extends AppCompatActivity  {
 
 }
 
+/*
+
+ModelAgency modelAgency = new ModelAgency();
+String getsAgency;
+@Override
+                                protected Void doInBackground(Void[] params) {
+
+                                    getsAgency = modelAgency.gets();
+                                    try {
+                                        JSONArray jsnobject = new JSONArray(getsAgency);
+                                        for(int i=0; i<jsnobject.length(); i++) {
+                                            JSONObject agency = jsnobject.getJSONObject(i);
+                                            JSONObject item = agency.getJSONObject("_id");
+                                            System.out.println(item.toString());
+
+                                        }
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+ */

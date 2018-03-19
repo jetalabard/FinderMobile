@@ -1,5 +1,6 @@
 package fr.finder.finder;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import fr.finder.business.Agency;
+import fr.finder.business.AgencyBDD;
 
 public class HomePageActivity extends AppCompatActivity {
 
@@ -56,6 +62,12 @@ public class HomePageActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
+        /*Bundle data = this.getIntent().getBundleExtra("agencies");
+        ArrayList<AgencyBDD> agencies = data.getParcelableArrayList("search.resultSet");
+        for(int i=0; i<agencies.size(); i++) {
+            AgencyBDD agency = agencies.get(i);
+            System.out.println(agency.get_id());
+        }*/
     }
 
 
